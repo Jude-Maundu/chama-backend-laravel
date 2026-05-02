@@ -18,7 +18,7 @@ class CorsMiddleware
             'https://localhost:5173',
             'https://127.0.0.1:3000',
             'https://127.0.0.1:5173',
-            'https://chama-frontend.onrender.com',
+            'https://chama-frontend-ph8d.onrender.com',
         ];
 
         $origin = $request->header('Origin');
