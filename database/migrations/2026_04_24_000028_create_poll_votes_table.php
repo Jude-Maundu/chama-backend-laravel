@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    public $withinTransaction = false;
+
+
     public function up(): void
     {
         Schema::create('poll_votes', function (Blueprint $table) {

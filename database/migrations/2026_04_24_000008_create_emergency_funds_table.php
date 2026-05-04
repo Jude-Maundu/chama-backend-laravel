@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    public $withinTransaction = false;
+
+
     public function up(): void
     {
         Schema::create('emergency_funds', function (Blueprint $table) {
