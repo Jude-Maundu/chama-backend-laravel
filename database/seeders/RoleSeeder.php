@@ -34,11 +34,11 @@ class RoleSeeder extends Seeder
         }
         
         // SUPER ADMIN - System-wide administrator (has all permissions)
-        $superAdminRole = Role::firstOrCreate(['name' => 'super_admin']);
+        $superAdminRole = Role::firstOrCreate(['name' => 'super-admin']);
         $superAdminRole->givePermissionTo(Permission::all());
         
         // ADMIN - Chama-specific administrator (manages specific chama members, contributions, etc.)
-        $adminRole = Role::firstOrCreate(['name' => 'admin']);
+        $adminRole = Role::firstOrCreate(['name' => 'chama-admin']);
         $adminRole->givePermissionTo([
             'view_members', 'edit_members', 'manage_member_roles',
             'view_contributions', 'approve_contributions', 'manage_contribution_settings',
