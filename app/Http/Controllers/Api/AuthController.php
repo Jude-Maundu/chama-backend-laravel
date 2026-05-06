@@ -53,12 +53,12 @@ class AuthController extends Controller
 
             $token = $user->createToken('API Token')->plainTextToken;
 
-            AuditLog::create([
-                'user_id' => $user->id,
-                'action' => 'login',
-                'ip_address' => $request->ip(),
-                'user_agent' => $request->userAgent(),
-            ]);
+            $auditLog = new AuditLog();
+            $auditLog->user_id = $user->id;
+            $auditLog->action = 'login';
+            $auditLog->ip_address = $request->ip();
+            $auditLog->user_agent = $request->userAgent();
+            $auditLog->save();
 
             return response()->json([
                 'success' => true,
